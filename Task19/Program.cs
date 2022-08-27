@@ -8,26 +8,35 @@
 */
 Console.Write("Введите пятизначное число: ");
 int num = Convert.ToInt32(Console.ReadLine());
-while (num <= 10000 || num >= 100000) // Проверка на правильность ввода числа
+// Проверка на правильность ввода числа
+while (num <= 10000 || num >= 100000)
 {
     Console.Write("Введено неверное значение. ");
     Console.Write("Введите пятизначное число: ");
     num = Convert.ToInt32(Console.ReadLine());
 }
-int[] array = new int[5]; // Определение цифр в заданном числе
-for (int i = 4; i >= 0; i--)
+// Проверка последовательно трех чисел на соответствие полиному
+for (int i = 1; i < 4; i++)
 {
-    int part = Math.DivRem(num, 10, out int d);
-    num = part;
-    array[i] = d;
-}
-int dir = array[0] + array[1] + array[2]; // Определение числа как полиндрома
-int rev = array[2] + array[3] + array[4];
-if (dir == rev)
-{
-    Console.Write($"Число является полиндромом");
-}
-else
-{
-    Console.Write($"Число не является полиндромом");
+    int part1 = Math.DivRem(num, 10, out int d5); // Нахождение значений всех цифр в числе
+    int part2 = Math.DivRem(part1, 10, out int d4);
+    int part3 = Math.DivRem(part2, 10, out int d3);
+    int part4 = Math.DivRem(part3, 10, out int d2);
+    int d1 = part4 % 10;
+    int cond = d1 + 1;
+    if (cond == d2 && d2 < d3 && d4 == d2 && d5 == d1) // Условие проверки на соответствие
+    {
+        Console.WriteLine($"{num} -> да");
+    }
+    else
+    {
+        Console.WriteLine($"{num} -> нет");
+    }
+    // Условие прерывания ввода следующего числа
+    if (i == 3)
+    {
+        break;
+    }
+    Console.Write("Введите слудующее пятизначное число: ");
+    num = Convert.ToInt32(Console.ReadLine());
 }
