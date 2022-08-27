@@ -14,7 +14,7 @@ while (num <= 10000 || num >= 100000)
     Console.Write("Введите пятизначное число: ");
     num = Convert.ToInt32(Console.ReadLine());
 }
-// Проверка последовательно трех чисел на соответствие полиному
+// Проверка последовательно трех чисел на соответствие палиндрому
 for (int i = 1; i < 4; i++)
 {
     int part1 = Math.DivRem(num, 10, out int d5); // Нахождение значений всех цифр в числе
@@ -23,7 +23,7 @@ for (int i = 1; i < 4; i++)
     int part4 = Math.DivRem(part3, 10, out int d2);
     int d1 = part4 % 10;
     int cond = d1 + 1;
-    if (cond == d2 && d2 < d3 && d4 == d2 && d5 == d1) // Условие проверки на соответствие
+    if (cond == d2 && d2 < d3 && d4 == d2 && d5 == d1) // Условие проверки на соответствие палиндрому
     {
         Console.WriteLine($"{num} -> да");
     }
