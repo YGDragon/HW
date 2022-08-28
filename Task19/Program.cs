@@ -7,9 +7,9 @@
 */
 // Проверка последовательно трех чисел на соответствие палиндрому
 int [] num = {14212,12821,23432};
-for (int i = 0; i < 3; i++)
+foreach (int k in num)
 {
-    int part1 = Math.DivRem(num[i], 10, out int d5); // Нахождение значений всех цифр в числе
+    int part1 = Math.DivRem(k, 10, out int d5); // Нахождение значений всех цифр в числе
     int part2 = Math.DivRem(part1, 10, out int d4);
     int part3 = Math.DivRem(part2, 10, out int d3);
     int part4 = Math.DivRem(part3, 10, out int d2);
@@ -17,10 +17,10 @@ for (int i = 0; i < 3; i++)
     int cond = d1 + 1;
     if (cond == d2 && d2 < d3 && d4 == d2 && d5 == d1) // Условие проверки на соответствие палиндрому
     {
-        Console.WriteLine($"{num[i]} -> да");
+        Console.WriteLine($"{k} -> да");
     }
-    else
+     else
     {
-        Console.WriteLine($"{num[i]} -> нет");
+        Console.WriteLine($"{k} -> нет");
     }
 }
