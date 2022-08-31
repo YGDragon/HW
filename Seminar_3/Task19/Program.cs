@@ -20,10 +20,8 @@ for (int i = 1; i < 4; i++)
     int part1 = Math.DivRem(num, 10, out int d5); // Нахождение значений всех цифр в числе
     int part2 = Math.DivRem(part1, 10, out int d4);
     int part3 = Math.DivRem(part2, 10, out int d3);
-    int part4 = Math.DivRem(part3, 10, out int d2);
-    int d1 = part4 % 10;
-    int cond = d1 + 1;
-    if (cond == d2 && d2 < d3 && d4 == d2 && d5 == d1) // Условие проверки на соответствие палиндрому
+    int d1 = Math.DivRem(part3, 10, out int d2);
+    if (d4 == d2 && d5 == d1) // Условие проверки на соответствие палиндрому
     {
         Console.WriteLine($"{num} -> да");
     }
