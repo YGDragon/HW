@@ -1,0 +1,15 @@
+F:\ПРОГРАММИРОВАНИЕ\Course C#\HomeWork\Seminar_5\Task34\bin\Debug\net6.0\Task34.exe
+F:\ПРОГРАММИРОВАНИЕ\Course C#\HomeWork\Seminar_5\Task34\bin\Debug\net6.0\Task34.deps.json
+F:\ПРОГРАММИРОВАНИЕ\Course C#\HomeWork\Seminar_5\Task34\bin\Debug\net6.0\Task34.runtimeconfig.json
+F:\ПРОГРАММИРОВАНИЕ\Course C#\HomeWork\Seminar_5\Task34\bin\Debug\net6.0\Task34.dll
+F:\ПРОГРАММИРОВАНИЕ\Course C#\HomeWork\Seminar_5\Task34\bin\Debug\net6.0\Task34.pdb
+F:\ПРОГРАММИРОВАНИЕ\Course C#\HomeWork\Seminar_5\Task34\obj\Debug\net6.0\Task34.csproj.AssemblyReference.cache
+F:\ПРОГРАММИРОВАНИЕ\Course C#\HomeWork\Seminar_5\Task34\obj\Debug\net6.0\Task34.GeneratedMSBuildEditorConfig.editorconfig
+F:\ПРОГРАММИРОВАНИЕ\Course C#\HomeWork\Seminar_5\Task34\obj\Debug\net6.0\Task34.AssemblyInfoInputs.cache
+F:\ПРОГРАММИРОВАНИЕ\Course C#\HomeWork\Seminar_5\Task34\obj\Debug\net6.0\Task34.AssemblyInfo.cs
+F:\ПРОГРАММИРОВАНИЕ\Course C#\HomeWork\Seminar_5\Task34\obj\Debug\net6.0\Task34.csproj.CoreCompileInputs.cache
+F:\ПРОГРАММИРОВАНИЕ\Course C#\HomeWork\Seminar_5\Task34\obj\Debug\net6.0\Task34.dll
+F:\ПРОГРАММИРОВАНИЕ\Course C#\HomeWork\Seminar_5\Task34\obj\Debug\net6.0\refint\Task34.dll
+F:\ПРОГРАММИРОВАНИЕ\Course C#\HomeWork\Seminar_5\Task34\obj\Debug\net6.0\Task34.pdb
+F:\ПРОГРАММИРОВАНИЕ\Course C#\HomeWork\Seminar_5\Task34\obj\Debug\net6.0\Task34.genruntimeconfig.cache
+F:\ПРОГРАММИРОВАНИЕ\Course C#\HomeWork\Seminar_5\Task34\obj\Debug\net6.0\ref\Task34.dll
