@@ -45,7 +45,7 @@ void PrintArray(int[,] data)
     }
 }
 
-// Метод - вывод значения элемента в массиве.
+// Метод - вывод среднего арифметического элементов в каждом столбце.
 void MidleSum(int[,] data)
 {
     int sizeRow = data.GetLength(0);
