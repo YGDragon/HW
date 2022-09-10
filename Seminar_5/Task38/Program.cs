@@ -21,7 +21,7 @@ void FillArray(double[] data)
         data[i] = new Random().Next(100);
     }
 }
-// Метод - печать массив.
+// Метод - печать массива.
 void PrintArray(double[] data)
 {
     string line = String.Empty;

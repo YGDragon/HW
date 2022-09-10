@@ -16,34 +16,20 @@
 void OutResult()
 {
     int[,] data = new int[4, 4];
-    FillArray(data);
-    PrintArray(data);
+    GetArray(data);
     Console.Write("Введите позицию элемента двумерного массива: ");
-    int number = Convert.ToInt32(Console.ReadLine());
-    СheckPosition(data, number);
+    int position = Convert.ToInt32(Console.ReadLine());
+    СheckPosition(data, position);
 }
 
-// Метод - заполнение массива случайными числами.
-void FillArray(int[,] data)
+// Метод - заполнение массива случайными числами и вывод на печать.
+void GetArray(int[,] data)
 {
     for (int i = 0; i < data.GetLength(0); i++)
     {
         for (int j = 0; j < data.GetLength(1); j++)
         {
-            double factor = new Random().NextDouble();
             data[i, j] = new Random().Next(40);
-        }
-    }
-}
-
-// Метод - вывод на печать массива.
-void PrintArray(int[,] data)
-{
-    Console.WriteLine(" ");
-    for (int i = 0; i < data.GetLength(0); i++)
-    {
-        for (int j = 0; j < data.GetLength(1); j++)
-        {
             Console.Write($"{data[i, j]}\t");
         }
         Console.WriteLine('\n');
@@ -53,23 +39,19 @@ void PrintArray(int[,] data)
 // Метод - вывод значения элемента в массиве.
 void СheckPosition(int[,] data, int inputPar)
 {
+    int count = -1;
     if (inputPar > data.Length - 1)
     {
         Console.Write($"{inputPar} -> такого числа в массиве нет");
     }
-    int posNumber = -1;
-    for (int i = 0; i < data.GetLength(0); i++)
+    foreach (int k in data)
     {
-        for (int j = 0; j < data.GetLength(1); j++)
+        count++;
+        if (count == inputPar)
         {
-            posNumber++;
-            if (posNumber == inputPar)
-            {
-                Console.Write($"{inputPar} -> {data[i, j]}");
-            }
+            Console.Write(inputPar + "->" + k);
         }
     }
-
 }
 
 // Вызов комбинированного метода.

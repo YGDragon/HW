@@ -13,11 +13,7 @@ m = 3, n = 4.
 // Комбинированный метод - задание размера массива и вывод результата.
 void OutResult()
 {
-    Console.Write("Требуется задать количество строк массива: ");
-    int m = Convert.ToInt32(Console.ReadLine());
-    Console.Write("Требуется задать количество столбцов массива: ");
-    int n = Convert.ToInt32(Console.ReadLine());
-    double[,] data = new double[m, n];
+    double[,] data = new double[5, 6];
     FillArray(data);
     PrintArray(data);
 }
@@ -30,7 +26,8 @@ void FillArray(double[,] data)
         for (int j = 0; j < data.GetLength(1); j++)
         {
             double factor = new Random().NextDouble();
-            data[i, j] = Math.Round((new Random().Next(-50, 50)) * factor, 1);
+            data[i, j] = factor * new Random().Next(-50, 50);
+            data[i, j] = Math.Round(data[i, j], 1);
         }
     }
 }
@@ -38,7 +35,7 @@ void FillArray(double[,] data)
 // Метод - вывод на печать массива.
 void PrintArray(double[,] data)
 {
-    Console.WriteLine(" ");
+    Console.WriteLine();
     for (int i = 0; i < data.GetLength(0); i++)
     {
         for (int j = 0; j < data.GetLength(1); j++)

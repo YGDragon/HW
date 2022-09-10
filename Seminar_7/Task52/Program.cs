@@ -13,32 +13,18 @@
 void OutResult()
 {
     int[,] data = new int[4, 6];
-    FillArray(data);
-    PrintArray(data);
+    GetArray(data);
     MidleSum(data);
 }
 
-// Метод - заполнение массива случайными числами.
-void FillArray(int[,] data)
+// Метод - заполнение массива случайными числами и вывод на печать.
+void GetArray(int[,] data)
 {
     for (int i = 0; i < data.GetLength(0); i++)
     {
         for (int j = 0; j < data.GetLength(1); j++)
         {
-            double factor = new Random().NextDouble();
-            data[i, j] = new Random().Next(20);
-        }
-    }
-}
-
-// Метод - вывод на печать массива.
-void PrintArray(int[,] data)
-{
-    Console.WriteLine(" ");
-    for (int i = 0; i < data.GetLength(0); i++)
-    {
-        for (int j = 0; j < data.GetLength(1); j++)
-        {
+            data[i, j] = new Random().Next(40);
             Console.Write($"{data[i, j]}\t");
         }
         Console.WriteLine('\n');
@@ -48,26 +34,19 @@ void PrintArray(int[,] data)
 // Метод - вывод среднего арифметического элементов в каждом столбце.
 void MidleSum(int[,] data)
 {
-    int sizeRow = data.GetLength(0);
-    int sizeСolumn = data.GetLength(1);
     Console.Write("Среднее арифметическое каждого столбца: ");
-    for (int j = 0; j < sizeСolumn; j++)
+    int row = data.GetLength(0);
+    int column = data.GetLength(1);
+    for (int j = 0; j < column; j++)
     {
         double sum = 0;
-        for (int i = 0; i < sizeRow; i++)
+        for (int i = 0; i < row; i++)
         {
             sum += data[i, j];
         }
-        sum = Math.Round(sum / sizeRow, 1);
-        Console.Write($"{sum}");
-        if (j < sizeСolumn - 1)
-        {
-            Console.Write("; ");
-        }
-        else
-        {
-            Console.Write(".");
-        }
+        Console.Write(Math.Round(sum / row, 1));
+        string end = j < column - 1 ? "; " : ".";
+        Console.Write(end);
     }
 }
 
