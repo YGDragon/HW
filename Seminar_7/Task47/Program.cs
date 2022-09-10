@@ -21,6 +21,7 @@ void GetArray(double[,] data)
         for (int j = 0; j < data.GetLength(1); j++)
         {
             double coef = 1;
+            // Исключение вывода -0
             coef = coef == 0 ? -1 : new Random().NextDouble();
             data[i, j] = coef * new Random().Next(-50, 50);
             Console.Write($"{Math.Round(data[i, j], 1)}\t");
