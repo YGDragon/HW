@@ -12,19 +12,19 @@
 // Комбинированный метод - вывод результата.
 void OutResult()
 {
-    int[,] data = new int[4, 6];
+    int[,] data = new int[4, 4];
     GetArray(data);
     MidleSum(data);
 }
 
-// Метод - заполнение массива случайными числами и вывод на печать.
+// Метод - заполнение массива и вывод на печать.
 void GetArray(int[,] data)
 {
     for (int i = 0; i < data.GetLength(0); i++)
     {
         for (int j = 0; j < data.GetLength(1); j++)
         {
-            data[i, j] = new Random().Next(40);
+            data[i, j] = new Random().Next(20);
             Console.Write($"{data[i, j]}\t");
         }
         Console.WriteLine('\n');
