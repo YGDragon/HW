@@ -16,7 +16,7 @@ void OutResult()
 {
     int[,] data = new int[4, 4];
     GetArray(data);
-    Console.Write("Ввод позиции элемента двумерного массива: ");
+    Console.Write("Ввод позиции двумерного массива: ");
     int position = Convert.ToInt32(Console.ReadLine());
     СheckPosition(data, position);
 }
@@ -38,19 +38,20 @@ void GetArray(int[,] data)
 // Метод - проверка позиции элемента в массиве.
 void СheckPosition(int[,] data, int inputPar)
 {
-    if (inputPar > data.Length - 1)
-    {
-        Console.Write($"{inputPar} -> такого числа в массиве нет");
-    }
+    double trueResult = 0;
     int count = 0;
     foreach (int k in data)
     {
         if (count == inputPar)
         {
-            Console.Write(inputPar + " -> " + k);
+            trueResult = k;
         }
         count++;
     }
+    string line = $"{inputPar} -> ";
+    string falseResult = "такого числа в массиве нет";
+    line += inputPar > data.Length - 1 ? falseResult : $"{trueResult}";
+    Console.Write(line);
 }
 
 // Вызов комбинированного метода.
