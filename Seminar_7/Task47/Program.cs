@@ -8,7 +8,7 @@ m = 3, n = 4.
 8 7,8 -7,1 9
 */
 
-double[,] data = new double[5, 6];
+double[,] data = new double[4, 4];
 GetArray(data);
 
 // Метод - заполнение массива и вывод на печать.
@@ -18,13 +18,11 @@ void GetArray(double[,] data)
     {
         for (int j = 0; j < data.GetLength(1); j++)
         {
-            double coef = 1;
-            string line = String.Empty;
-            // Исключение вывода -0.
-            coef = coef == 0 ? -1 : new Random().NextDouble();
+            double coef = new Random().NextDouble();
             data[i, j] = coef * new Random().Next(-50, 50);
             double mediate = Math.Round(data[i, j], 1);
             // Выравнивание элементов по вертикали.
+            string line = String.Empty;
             line = mediate < 0 ? $"{mediate}\t" : $"{line} {mediate}\t";
             Console.Write(line);
         }
