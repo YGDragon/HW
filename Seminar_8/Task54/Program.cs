@@ -12,3 +12,71 @@
 9 5 3 2
 8 4 4 2
 */
+
+// Комбинированный метод - вывод результата.
+void OutResult()
+{
+    int[,] table = new int[4, 4];
+    Console.WriteLine("Заданный массив: ");
+    GetArray(table);
+    Console.WriteLine("Упорядоченный массив: ");
+    SortEachRow(table);
+}
+
+// Метод - заполнение двумерного массива и вывод на печать.
+void GetArray(int[,] data)
+{
+    for (int i = 0; i < data.GetLength(0); i++)
+    {
+        for (int j = 0; j < data.GetLength(1); j++)
+        {
+            data[i, j] = new Random().Next(20);
+            Console.Write($"{data[i, j]}\t");
+        }
+        Console.WriteLine();
+    }
+    Console.WriteLine();
+}
+
+// Метод - вывод на печать одномерного массива.
+void PrintArray(int[] data)
+{
+    for (int i = 0; i < data.Length; i++)
+    {
+        Console.Write($"{data[i]}\t");
+    }
+    Console.WriteLine();
+}
+
+// Метод - упорядочивание по убыванию элементов каждой строки двумерного массива.
+void SortEachRow(int[,] data)
+{
+    for (int i = 0; i < data.GetLength(0); i++)
+    {
+        int[] oneRow = new int[data.GetLength(1)];
+        for (int j = 0; j < data.GetLength(1); j++)
+        {
+            oneRow[j] = data[i, j];
+        }
+        SortArray(oneRow);
+        PrintArray(oneRow);
+    }
+}
+
+// Метод - сортировка одномерного массива.
+void SortArray(int[] oneRow)
+{
+    for (int i = 0; i < oneRow.Length; i++)
+    {
+        for (int j = i + 1; j < oneRow.Length; j++)
+        {
+            if (oneRow[i] < oneRow[j])
+            {
+                int value = oneRow[i];
+                oneRow[i] = oneRow[j];
+                oneRow[j] = value;
+            }
+        }
+    }
+}
+OutResult();
