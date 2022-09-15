@@ -20,7 +20,8 @@ void OutResult()
     Console.WriteLine("Заданный массив: ");
     GetArray(table);
     Console.WriteLine("Упорядоченный массив: ");
-    SortEachRow(table);
+    int[,] tableSort = SortEachRow(table);
+    PrintArray(tableSort);
 }
 
 // Метод - заполнение двумерного массива и вывод на печать.
@@ -38,18 +39,22 @@ void GetArray(int[,] data)
     Console.WriteLine();
 }
 
-// Метод - вывод на печать одномерного массива.
-void PrintArray(int[] data)
+// Метод - вывод на печать двумерного массива.
+void PrintArray(int[,] data)
 {
-    for (int i = 0; i < data.Length; i++)
+    for (int i = 0; i < data.GetLength(0); i++)
     {
-        Console.Write($"{data[i]}\t");
+        for (int j = 0; j < data.GetLength(1); j++)
+        {
+            Console.Write($"{data[i, j]}\t");
+        }
+        Console.WriteLine();
     }
     Console.WriteLine();
 }
 
 // Метод - упорядочивание по убыванию элементов каждой строки двумерного массива.
-void SortEachRow(int[,] data)
+int[,] SortEachRow(int[,] data)
 {
     for (int i = 0; i < data.GetLength(0); i++)
     {
@@ -59,8 +64,12 @@ void SortEachRow(int[,] data)
             oneRow[j] = data[i, j];
         }
         SortArray(oneRow);
-        PrintArray(oneRow);
+        for (int j = 0; j < data.GetLength(1); j++)
+        {
+            data[i, j] = oneRow[j];
+        }
     }
+    return data;
 }
 
 // Метод - сортировка одномерного массива.
