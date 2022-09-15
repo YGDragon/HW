@@ -18,25 +18,23 @@ void OutResult()
 {
     int[,] table = new int[4, 4];
     Console.WriteLine("Заданный массив: ");
-    GetArray(table);
+    FillArray(table);
+    PrintArray(table);
     Console.WriteLine("Упорядоченный массив: ");
     int[,] tableSort = SortEachRow(table);
     PrintArray(tableSort);
 }
 
-// Метод - заполнение двумерного массива и вывод на печать.
-void GetArray(int[,] data)
+// Метод - заполнение двумерного массива.
+void FillArray(int[,] data)
 {
     for (int i = 0; i < data.GetLength(0); i++)
     {
         for (int j = 0; j < data.GetLength(1); j++)
         {
             data[i, j] = new Random().Next(20);
-            Console.Write($"{data[i, j]}\t");
         }
-        Console.WriteLine();
     }
-    Console.WriteLine();
 }
 
 // Метод - вывод на печать двумерного массива.
@@ -53,7 +51,7 @@ void PrintArray(int[,] data)
     Console.WriteLine();
 }
 
-// Метод - упорядочивание по убыванию элементов каждой строки двумерного массива.
+// Метод - упорядочивание элементов каждой строки двумерного массива.
 int[,] SortEachRow(int[,] data)
 {
     for (int i = 0; i < data.GetLength(0); i++)
@@ -88,4 +86,5 @@ void SortArray(int[] oneRow)
         }
     }
 }
+
 OutResult();
