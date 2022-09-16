@@ -7,64 +7,47 @@
 11 16 15 06
 10 09 08 07
 */
-*/
-string [,] spiral = new string[5,4];
-int size = spiral.Length;
-string[] numbers = new string[size];
-int row = spiral.GetLength(0);
-int column = spiral.GetLength(1);
 
-FillArrayNum(numbers);
-PrintSingleArray(numbers);
-FillHighRow(spiral, numbers, column);
-PrintArray(spiral);
-// Метод - заполнение одномерного строкового массива числами.
-void FillArrayNum(string[] oneRow)
+//Комбинированный метод - вывод результата.
+void OutResult()
 {
-  for (int i = 0; i < oneRow.Length; i++)
-  { 
-    oneRow[i] = i <= 8 ? (0 + $"{i + 1}") : $"{i + 1}";
-    if (i == 9)
-    {
-      oneRow[i] = "10";
-    }
-  }
+    string[,] spiral = new string[4, 4];
+    // Задание зубчатого массива.
+    string[][] numbers = {
+    new string[] { "01", "02", "03", "04" },
+    new string[] { "12", "13", "14", "05" },
+    new string[] { "11", "16", "15", "06" },
+    new string[] { "10", "09", "08", "07" }
+    };
+    SpiralFill(spiral, numbers);
+    Console.WriteLine();
+    Console.WriteLine("Двумерный массив 4 на 4:");
+    PrintArray(spiral);
 }
-  
-void FillHighRow(string[,] data, string[] filler, int c)
+
+// Метод - спиральное заполнение двумерного массива.
+void SpiralFill(string[,] data, string[][] filler)
 {
-    for (int j = 0; j < c; j++)
+    for (int i = 0; i < data.GetLength(0); i++)
     {
-    data[0,j] = filler[j];
+        for (int j = 0; j < data.GetLength(1); j++)
+        {
+            data[i, j] = filler[i][j];
+        }
     }
 }
 
-/*for (int i = 0; j < column; j++)
-{
-  for (int i = 0; i < row; i++)
-  {
-    spiral[i,j] = 
-  }
-}*/
+// Метод - вывод на печать двумерного массива.
 void PrintArray(string[,] data)
 {
     for (int i = 0; i < data.GetLength(0); i++)
     {
         for (int j = 0; j < data.GetLength(1); j++)
         {
-            Console.Write($"{data[i, j]}\t");
+            Console.Write($"{data[i, j]} ");
         }
         Console.WriteLine();
     }
     Console.WriteLine();
 }
-
-// Метод - вывод на печать одномерного массива.
-void PrintSingleArray(string[] data)
-{
-    for (int i = 0; i < data.Length; i++)
-    {
-        Console.Write($"{data[i]}\t");
-    }
-    Console.WriteLine();
-}
+OutResult();
