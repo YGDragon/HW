@@ -14,7 +14,7 @@
 void OutResult()
 {
     int[,,] array3 = new int[4, 4, 3];
-    Console.WriteLine($"Размер333 массива: {array3.GetLength(0)} x {array3.GetLength(1)} x {array3.GetLength(2)}");
+    Console.WriteLine($"Размер массива: {array3.GetLength(0)} x {array3.GetLength(1)} x {array3.GetLength(2)}");
     FillOriginalArray(array3);
     PrintOriginalArray(array3);
 }
