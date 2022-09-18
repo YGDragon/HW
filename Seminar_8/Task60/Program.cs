@@ -12,9 +12,9 @@
 
 //Комбинированный метод - вывод результата.
 void OutResult()
-{   // исходный трехмерный массив 2 x 2 x 2
+{
     int[,,] array3 = new int[4, 4, 3];
-    Console.WriteLine($"Размер массива: [{array3.GetLength(0)}, {array3.GetLength(1)}, {array3.GetLength(2)}]");
+    Console.WriteLine($"Размер333 массива: {array3.GetLength(0)} x {array3.GetLength(1)} x {array3.GetLength(2)}");
     FillOriginalArray(array3);
     PrintOriginalArray(array3);
 }
@@ -25,7 +25,7 @@ void FillOriginalArray(int[,,] data)
     for (int g = 0; g < data.GetLength(2); g++)
     {
         int coef = 11;
-        coef += g * 10;
+        coef += g * data.GetLength(0) *data.GetLength(1);
         for (int i = 0; i < data.GetLength(0); i++)
         {
             for (int j = 0; j < data.GetLength(1); j++)
