@@ -20,6 +20,7 @@ void OutResult()
     PrintArray(matrix1);
     PrintArray(matrix2);
     int[,] matrix3 = MatrixProduct(matrix1, matrix2);
+    Console.WriteLine("Произведение матриц: ");
     PrintArray(matrix3);
 }
 
