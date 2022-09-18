@@ -9,6 +9,7 @@
 15 18
 */
 
+//Комбинированный метод - вывод результата.
 void OutResult()
 {
     int[,] matrix1 = new int[3, 2];
@@ -22,7 +23,7 @@ void OutResult()
     PrintArray(matrix3);
 }
 
-// Метод - умножение первой матрицы на вторую.
+// Метод №1 - умножение первой матрицы на вторую.
 int[,] MatrixProduct(int[,] m1, int[,] m2)
 {
     int row = m1.GetLength(0);
@@ -48,7 +49,7 @@ int[,] MatrixProduct(int[,] m1, int[,] m2)
     return product;
 }
 
-// Метод - заполнение двумерного массива.
+// Метод №2 - заполнение двумерного массива.
 void FillArray(int[,] data)
 {
     for (int i = 0; i < data.GetLength(0); i++)
@@ -60,7 +61,7 @@ void FillArray(int[,] data)
     }
 }
 
-// Метод - вывод на печать двумерного массива.
+// Метод №3 - вывод на печать двумерного массива.
 void PrintArray(int[,] data)
 {
     for (int i = 0; i < data.GetLength(0); i++)

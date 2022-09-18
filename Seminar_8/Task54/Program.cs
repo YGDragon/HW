@@ -24,7 +24,7 @@ void OutResult()
     PrintArray(tableSort);
 }
 
-// Метод - заполнение двумерного массива.
+// Метод №1 - заполнение двумерного массива.
 void FillArray(int[,] data)
 {
     for (int i = 0; i < data.GetLength(0); i++)
@@ -36,7 +36,7 @@ void FillArray(int[,] data)
     }
 }
 
-// Метод - вывод на печать двумерного массива.
+// Метод №2 - вывод на печать двумерного массива.
 void PrintArray(int[,] data)
 {
     for (int i = 0; i < data.GetLength(0); i++)
@@ -50,7 +50,7 @@ void PrintArray(int[,] data)
     Console.WriteLine();
 }
 
-// Метод - упорядочивание элементов каждой строки двумерного массива.
+// Метод №3 - упорядочивание элементов каждой строки двумерного массива.
 int[,] SortEachRow(int[,] data)
 {
     for (int i = 0; i < data.GetLength(0); i++)
@@ -69,7 +69,7 @@ int[,] SortEachRow(int[,] data)
     return data;
 }
 
-// Метод - сортировка одномерного массива.
+// Метод №4 - сортировка одномерного массива.
 void SortArray(int[] oneRow)
 {
     for (int i = 0; i < oneRow.Length; i++)

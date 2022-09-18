@@ -20,7 +20,7 @@ void OutResult()
     Console.WriteLine($"Номер строки с наименьшей суммой элементов: {result} строка");
 }
 
-// Метод - заполнение двумерного массива и вывод на печать.
+// Метод №1 - заполнение двумерного массива и вывод на печать.
 void GetArray(int[,] data)
 {
     for (int i = 0; i < data.GetLength(0); i++)
@@ -35,7 +35,7 @@ void GetArray(int[,] data)
     Console.WriteLine();
 }
 
-// Метод - вывод на печать одномерного массива.
+// Метод №2 - вывод на печать одномерного массива.
 void PrintArray(int[] data)
 {
     for (int i = 0; i < data.Length; i++)
@@ -45,7 +45,7 @@ void PrintArray(int[] data)
     Console.WriteLine();
 }
 
-// Метод - проверка суммы элементов строк массива.
+// Метод №3 - проверка суммы элементов строк массива.
 int CheckSum(int[,] data)
 {
     int row = data.GetLength(0);
@@ -65,7 +65,7 @@ int CheckSum(int[,] data)
     return minRow;
 }
 
-// Метод - поиск номера строки с наименьшей суммой.
+// Метод №4 - поиск номера строки с наименьшей суммой.
 int MinValue(int[] oneRow)
 {
     int min = oneRow[0];
