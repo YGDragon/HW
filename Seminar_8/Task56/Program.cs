@@ -17,7 +17,7 @@ void OutResult()
     Console.WriteLine("Заданный массив: ");
     GetArray(table);
     int result = CheckSum(table);
-    Console.WriteLine($"Номер строки с наименьшей суммой элементов: {result} строка");
+    Console.WriteLine($"Номер строки с наименьшей суммой элементов: {result}");
 }
 
 // Метод №1 - заполнение двумерного массива и вывод на печать.
@@ -82,5 +82,3 @@ int MinValue(int[] oneRow)
 }
 
 OutResult();
-
-
